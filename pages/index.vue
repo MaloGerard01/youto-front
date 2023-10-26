@@ -6,7 +6,7 @@
         welcome <span v-if="userInfo">{{userInfo.username}}</span>
     </span>
     <li><NuxtLink to="/testpage">login test page</NuxtLink></li>
-    <li><NuxtLink to="/paramtest/1">param test</NuxtLink></li>
+    <li><NuxtLink to="/articles/1">articles</NuxtLink></li>
 </template>
 
 <script lang="ts" setup>

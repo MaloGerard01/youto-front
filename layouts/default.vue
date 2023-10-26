@@ -27,6 +27,12 @@
         <li>
           <NuxtLink to="/testpage" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</NuxtLink>
         </li>
+        <li v-if="!authenticated" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <nuxt-link to="/login">Login</nuxt-link>
+        </li>
+        <li v-if="authenticated" class="cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <nuxt-link @click="logout">Logout</nuxt-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -34,8 +40,18 @@
     <slot />
 </template>
 
-<script setup lang="js">
-// var {
-//     data:""
-// }
+<script lang="ts" setup>
+import { storeToRefs } from 'pinia'; // import storeToRefs helper hook from pinia
+import { useAuthStore } from '~/stores/auth'; // import the auth store we just created
+
+const router = useRouter();
+
+
+const { logUserOut } = useAuthStore(); // use authenticateUser action from  auth store
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+
+const logout = () => {
+  logUserOut();
+  router.push('/login');
+};
 </script>

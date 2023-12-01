@@ -1,6 +1,6 @@
 <template>
   
-    <nav class="bg-white sm:sticky sm:top-6 sm:mx-24 sm:left-0 sm:right-0 sm:rounded-2xl">
+    <nav class="bg-white sm:sticky sm:top-6 sm:mx-24 sm:left-0 sm:right-0 sm:rounded-2xl z-12">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4">
         <NuxtLink to="/" class="flex items-center hidden sm:block">
             <img src="~/assets/youtovf.png" class="h-11 mr-3" />

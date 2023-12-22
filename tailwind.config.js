@@ -8,6 +8,7 @@ export default {
       'vertPale': '#8d9e7e',
       'vertClair': '#e8eace',
       'melonOrange': '#f39454',
+      'lightOrange': '#fce4d4',
       'vertNoir': '#232826',
       'vertNoirtest': '#232827',
       'white': '#ffffff',

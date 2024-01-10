@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-80 bg-vertClair mt-6">
+    <div class="w-full h-80 bg-vertClair">
          <div class="flex flex-row justify-around pt-16"> 
             <div> 
                 <span class="uppercase font-bold text-xl">Coordonnées</span>

@@ -14,7 +14,7 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul class="font-bold text-sm uppercase flex flex-col items-center	 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
-              <NuxtLink to="/testpage" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Qui sommes-nous ?</NuxtLink>
+              <NuxtLink to="/quisommesnous" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Qui sommes-nous ?</NuxtLink>
             </li>
             <li>
               <NuxtLink to="/testpage" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Notre accompagnement</NuxtLink>

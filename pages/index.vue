@@ -17,14 +17,14 @@
             Je découvre les offres
           </NuxtLink>
         </div>
-          <img class="absolute right-24 w-1/2 z-1" src="~/assets/tp.png"/>
+          <img class="absolute right-24 w-1/2 z-1" src="~/assets/perso.png"/>
       </div>
     </div>
 
     <div class="h-full flex half-bg z-10 mb-4">
       <div class="swiper-container mx-60 overflow-x-scroll">
         <div class="swiper-wrapper flex justify-center">
-          <div class="swiper-slide flex-shrink-0 shadow-lg" v-for="(card, index) in cards" :key="index">
+          <div class="swiper-slide" v-for="(card, index) in cards" :key="index">
             <div class="bg-white px-8 py-4 shadow-md rounded-lg  flex flex-col gap-3">
               <h3 class="text-melonOrange font-bold text-center">{{ card.title }}</h3>
               <p class="text-sm">{{ card.description }}</p>
@@ -82,7 +82,7 @@
             </div>
           </div>
         </div>
-        <img class="absolute left-24 w-1/2 z-1" src="~/assets/to.png"/>
+        <img class="absolute left-24 w-1/2 z-1" src="~/assets/ordi.png"/>
       </div>
     </div>
 

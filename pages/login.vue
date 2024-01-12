@@ -2,18 +2,49 @@
 
 <body>
     <div class="h-screen flex">
-      <div class="flex flex-row justify-center items-center ">
-        <div class="flex flex-col gap-6 w-[60%]">
-          <h1 class="text-melonOrange font-bold text-4xl">Connexion</h1>
-          <p class="text-sm w-[65%] ">
+      <div class="flex flex-row justify-center items-start w-1/2 mt-16 ">
+        <div class="flex flex-col w-1/2 gap-4">
+          <h1 class="text-black font-bold text-4xl pb-2">Connexion</h1>
+          <p class="text-sm pb-2">
             Accédez à l’univers Youto …
           </p>
-          <NuxtLink
-            class="w-[40%] text-center shadow-md cursor-pointer font-bold  block px-4 py-3 bg-melonOrange border-2 border-melonOrange text-white rounded-2xl hover:bg-white hover:text-melonOrange">
-            Je découvre les offres
+      <input
+          v-model="user.username"
+          type="email"
+          class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
+          placeholder="Adresse email"
+          name="uname"
+          required
+      />
+      <input
+          v-model="user.password"
+          type="password"
+          class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
+          placeholder="Mot de passe"
+          name="psw"
+          required
+      />
+          <button @click.prevent="login"
+            class="text-center uppercase shadow-lg cursor-pointer font-bold  block px-4 py-3 bg-vertPale text-white rounded-2xl hover:bg-white hover:text-vertPale">
+            Se connecter
+          </button>
+
+          <NuxtLink class="text-sm text-vertPale font-bold">
+            Mot de passe oublié ?
           </NuxtLink>
+
+          <div> 
+            <p class="text-sm">
+            Vous n'avez pas de compte Youto ?
+          </p>
+
+          <NuxtLink class="text-sm text-vertPale font-bold">
+            Inscrivez-vous !
+          </NuxtLink>
+          </div>
+
         </div>
-          <img class="absolute right-24 w-1/2 z-1" src="~/assets/perso.png"/>
+          <img class="absolute right-24 w-1/2 z-1" src="~/assets/ordir.png"/>
       </div>
     </div>
 </body>
@@ -56,9 +87,14 @@ const { authenticateUser } = useAuthStore(); // use authenticateUser action from
 
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
+// const user = ref({
+//   username: 'kminchelle',
+//   password: '0lelplR',
+// });
+
 const user = ref({
-  username: 'kminchelle',
-  password: '0lelplR',
+  username: '',
+  password: '',
 });
 const router = useRouter();
 

@@ -19,7 +19,7 @@
       <div class="h-screen px-[11rem]  flex bg-lightOrange">
         <div class="flex flex-row justify-start gap-6 items-center w-screen w-1/2">
           <div class="flex flex-col w-full mb-20">
-            <titlegroup title="Lorem ipsum" subtitle="Quelques chiffres pour parler de Youto" orange/>
+            <titlegroup title="En savoir plus" subtitle="Quelques chiffres pour parler de Youto" orange/>
             <div class="">
               <div class="flex flex-col gap-6">
                 <div class="flex flex-row gap-10">

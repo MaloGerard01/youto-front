@@ -19,9 +19,7 @@
       <div class="h-screen px-[11rem]  flex bg-lightOrange">
         <div class="flex flex-row justify-start gap-6 items-center w-screen w-1/2">
           <div class="flex flex-col w-full mb-20">
-            <h2 class="text-melonOrange font-bold uppercase text-sm">Lorem ipsum</h2>
-            <h3 class="text-black font-bold text-3xl mb-12">Quelques chiffres pour parler de Youto</h3>
-  
+            <titlegroup title="Lorem ipsum" subtitle="Quelques chiffres pour parler de Youto" orange/>
             <div class="">
               <div class="flex flex-col gap-6">
                 <div class="flex flex-row gap-10">
@@ -60,10 +58,7 @@
       </div>
   
       <div class="px-[11rem] my-12">
-      <div class="mb-12"> 
-            <h2 class="text-vertPale font-bold uppercase text-sm">Partenaires</h2>
-          <h3 class="text-black font-bold text-3xl">Ils nous font confiance</h3>
-    </div>
+        <titlegroup title="Partenaires" subtitle="Ils nous font confiance" />
       <Swiper
       :height="800"
       :modules="[SwiperAutoplay]"
@@ -88,10 +83,7 @@
 </div>
 
       <div class="px-[11rem] my-12">
-      <div class="mb-12"> 
-            <h2 class="text-vertPale font-bold uppercase text-sm">Articles de blog</h2>
-          <h3 class="text-black font-bold text-3xl">Ils parlent de nous</h3>
-    </div>
+        <titlegroup title="Articles de blog" subtitle="Ils parlent de nous" />
       <Swiper
       :height="800"
       :modules="[SwiperAutoplay]"

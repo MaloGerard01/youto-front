@@ -1,4 +1,22 @@
 <template>
+
+<body>
+    <div class="h-screen flex">
+      <div class="flex flex-row justify-center items-center ">
+        <div class="flex flex-col gap-6 w-[60%]">
+          <h1 class="text-melonOrange font-bold text-4xl">Connexion</h1>
+          <p class="text-sm w-[65%] ">
+            Accédez à l’univers Youto …
+          </p>
+          <NuxtLink
+            class="w-[40%] text-center shadow-md cursor-pointer font-bold  block px-4 py-3 bg-melonOrange border-2 border-melonOrange text-white rounded-2xl hover:bg-white hover:text-melonOrange">
+            Je découvre les offres
+          </NuxtLink>
+        </div>
+          <img class="absolute right-24 w-1/2 z-1" src="~/assets/perso.png"/>
+      </div>
+    </div>
+</body>
   <div>
     <div class="title">
       <h2>Login</h2>

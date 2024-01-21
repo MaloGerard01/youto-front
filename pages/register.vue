@@ -49,7 +49,7 @@
 
           <p class="font-semibold text-sm">Date de naissance</p>
           <div class="flex justify-between w-full">
-            
+
             <input
           v-model="user.dob"
           type="number"
@@ -104,13 +104,24 @@
           required
       />
       <input
-          v-model="user.confirmpassword"
+          v-model="user.confirmPassword"
           type="password"
           class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
           placeholder="Confirmer le mot de passe"
           name="psw"
           required
       />
+      
+      <p v-if="noMatchConfirm" class="text-xs text-red-500">
+        Les mot de passes ne correspondent pas
+      </p>
+
+      <p v-if="noMatchRegex" class="text-xs text-red-500">
+        Le mot de passe doit contenir au moins 8 caractères, un caractère spécial, une lettre majuscule et minuscule.
+      </p>
+
+
+
       <div class="flex gap-3">
         <input
           v-model="user.cgu"
@@ -144,7 +155,7 @@
             Créer mon compte
           </button>
 
-          <div class="flex gap-2"> 
+          <div class="flex gap-2">
             <p class="text-sm">
             J'ai déjà un compte ?
           </p>
@@ -174,9 +185,6 @@ var YOUTO_API = "http://localhost:2000/";
 
 export default {
   setup() {
-    const { authenticateUser } = useAuthStore();
-    const { authenticated } = storeToRefs(useAuthStore());
-
     const router = useRouter();
   },
 
@@ -192,11 +200,14 @@ export default {
         tel: '',
         email: '',
         password: '',
-        confirmpassword: '',
+        confirmPassword: '',
         city: '',
         cgu: false,
         newsletter: false,
-      }
+      },
+      noMatchConfirm: false,
+      noMatchRegex: false,
+      errorMessage: '',
     };
   },
   methods: {
@@ -210,7 +221,32 @@ export default {
         this.currentStep--;
       }
     },
+    passwordCheck() {
+      if(this.user.password == this.user.confirmPassword)
+      {
+        const regex = /^(?=.*[A-Z])(?=.*[\W])(?=.*[0-9])(?=.*[a-z]).{8,128}$/;
+
+        if(this.user.password.match(regex))
+        {
+          this.noMatchConfirm = false
+          this.noMatchRegex = false
+          return true
+        }
+        else
+        {
+          this.noMatchConfirm = false
+          this.noMatchRegex = true
+        } 
+      }
+      else
+      {
+        this.noMatchConfirm = true
+        this.noMatchRegex = false
+      }
+      return false
+    },
     async submitForm() {
+      if(this.passwordCheck()) {
       const settings = { method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -218,14 +254,12 @@ export default {
                 },
                 body: JSON.stringify(this.user)
             };
-
-
             const response = await fetch( YOUTO_API + "register",
                 settings
             );
-
       console.log(this.user);
-      // Logique de soumission du formulaire
+      }
+
     },
   },
 };

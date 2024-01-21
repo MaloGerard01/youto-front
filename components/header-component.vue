@@ -20,15 +20,15 @@
               <NuxtLink to="/testpage" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Nos offres</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/testpage" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Mon compte</NuxtLink>
+              <NuxtLink to="/dashboard" class="block py-2 pl-3 pr-4 text-vertPale rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0">Mon compte</NuxtLink>
             </li>
             <nuxt-link to="/login" v-if="!authenticated" class="shadow-md cursor-pointer uppercase font-bold  block px-8 py-3 bg-white border-2 border-vertPale text-vertPale rounded-2xl hover:bg-vertPale hover:text-white">
               <span>Connexion</span>
             </nuxt-link>
-            <nuxt-link @click="logout" v-if="authenticated" class="shadow-md cursor-pointer uppercase font-bold  block px-8 py-3 bg-white border-2 border-vertPale text-vertPale rounded-2xl hover:bg-vertPale hover:text-white">
+            <nuxt-link @click="logout" v-if="authenticated" class="shadow-md cursor-pointer uppercase font-bold  block px-8 py-3 bg-vertPale border-2 border-vertPale text-white rounded-2xl hover:bg-white hover:text-vertPale">
               <span>Deconnexion</span>
             </nuxt-link>
-            <NuxtLink to="/register" class="shadow-md cursor-pointer uppercase font-bold  block px-8 py-3 bg-vertPale border-2 border-vertPale text-white rounded-2xl hover:bg-white hover:text-vertPale">
+            <NuxtLink to="/register" v-if="!authenticated" class="shadow-md cursor-pointer uppercase font-bold  block px-8 py-3 bg-vertPale border-2 border-vertPale text-white rounded-2xl hover:bg-white hover:text-vertPale">
               <span>Inscription</span>
             </NuxtLink>
           </ul>

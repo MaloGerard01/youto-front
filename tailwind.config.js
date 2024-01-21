@@ -12,6 +12,8 @@ export default {
       'vertNoir': '#232826',
       'vertNoirtest': '#232827',
       'white': '#ffffff',
+      'lightGray' : '#D3D3D3',
+      'lighterGray' : '#F2F5F0',
     },
   }
   },

@@ -35,6 +35,7 @@
                     <div class="grid grid-cols-3 grid-rows-2 gap-3 w-full">
                       <div class="col-span-2 rounded-lg border-2 border-vertPale">
                         <h2 class="w-full text-center font-bold text-md">To do list</h2>
+
                         <div class="flex flex-col gap-2 px-8 my-8">
                           <div class="flex gap-4 rounded-3xl bg-lightGray">
                             <div class="text-center rounded-3xl bg-vertPale text-white w-24 py-2 font-bold">
@@ -77,15 +78,63 @@
                               <img src="~/assets/check.svg" class="bg-vertPale rounded-full h-7 my-auto mr-4" />
                             </div>
                           </div>
-
                           
+                          <p class="text-right mt-6 font-semibold text-vertPale">
+                            Voir plus >
+                          </p>
                         </div>
+
                       </div>
                       <div class="col-start-3 rounded-lg border-2 border-melonOrange">
                         <h2 class="w-full text-center font-bold text-md">Rappels</h2>
+
+                        <div class="flex flex-col gap-4 px-8 my-8">
+                          <div class="flex gap-2 rounded-3xl bg-lightOrange">
+                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
+                              <p class="text-2xl">14</p>
+                            </div>
+                            <div class="my-auto flex justify-between grow text-xs">
+                              <div> 
+                                <p>Dans 2 jours n'oublie pas ton rdv avec ton conseiller</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="flex gap-2 rounded-3xl bg-lightOrange">
+                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
+                              <p class="text-2xl">7</p>
+                            </div>
+                            <div class="my-auto flex justify-between grow text-xs">
+                              <div> 
+                                <p>Il te reste 2 documents à nous transmettre</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="flex gap-2 rounded-3xl bg-lightOrange">
+                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
+                              <p class="text-2xl">20</p>
+                            </div>
+                            <div class="my-auto flex justify-between grow text-xs">
+                              <div> 
+                                <p>Penses à prévoir ton changement de box internet</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <p class="text-right mt-6 font-semibold text-melonOrange">
+                            Voir plus >
+                          </p>
+                        </div>
+
+
                       </div>
                       <div class="row-start-2 rounded-lg border-2 border-vertPale">
                         <h2 class="w-full text-center font-bold text-md">Mon calendrier personnalisé</h2>
+                        <div class="w-full mt-8">
+                          <VCalendar v-model="date" :attributes="attributes" expanded />
+                        </div>
+                        
                       </div>
                       <div class="row-start-2 rounded-lg border-2 border-melonOrange">
                         <h2 class="w-full text-center font-bold text-md">Temps d'appel restant</h2>
@@ -101,12 +150,46 @@
         </div>
     </body>
     </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const attributes = ref([
+  {
+    key: 'today',
+    highlight: {
+      color: 'purple',
+      fillMode: 'solid',
+      contentClass: 'italic',
+    },
+    dates: new Date(year, month, 12),
+  },
+  {
+    highlight: {
+      color: 'purple',
+      fillMode: 'light',
+    },
+    dates: new Date(year, month, 13),
+  },
+  {
+    highlight: {
+      color: 'purple',
+      fillMode: 'outline',
+    },
+    dates: new Date(year, month, 14),
+  },
+]);
+</script>
     
     
-    <script lang="ts">
+    <!-- <script lang="ts">
     import { storeToRefs } from 'pinia';
     import { useAuthStore } from '~/stores/auth';
     var YOUTO_API = "http://localhost:2000/";
+    import { ref } from 'vue';
     
     export default {
       setup() {
@@ -139,59 +222,43 @@
           noMatchConfirm: false,
           noMatchRegex: false,
           errorMessage: '',
+          date: new Date(),
+          attributes: ref([]) as Ref<{ key: string; highlight: { color: string; fillMode: string; contentClass: string }; dates: Date }[]>,
         };
       },
       methods: {
-        nextStep() {
-          if (this.currentStep < 3) {
-            this.currentStep++;
-          }
-        },
-        prevStep() {
-          if (this.currentStep > 1) {
-            this.currentStep--;
-          }
-        },
-        passwordCheck() {
-          if(this.user.password == this.user.confirmPassword)
-          {
-            const regex = /^(?=.*[A-Z])(?=.*[\W])(?=.*[0-9])(?=.*[a-z]).{8,128}$/;
-    
-            if(this.user.password.match(regex))
-            {
-              this.noMatchConfirm = false
-              this.noMatchRegex = false
-              return true
-            }
-            else
-            {
-              this.noMatchConfirm = false
-              this.noMatchRegex = true
-            } 
-          }
-          else
-          {
-            this.noMatchConfirm = true
-            this.noMatchRegex = false
-          }
-          return false
-        },
-        async submitForm() {
-          if(this.passwordCheck()) {
-          const settings = { method: "POST",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(this.user)
-                };
-                const response = await fetch( YOUTO_API + "register",
-                    settings
-                );
-          console.log(this.user);
-          }
-    
-        },
+  
       },
+
+      mounted: function() {
+        const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+        this.attributes = ref([
+  {
+    key: 'today',
+    highlight: {
+      color: 'purple',
+      fillMode: 'solid',
+      contentClass: 'italic',
+    },
+    dates: new Date(year, month, 12),
+  },
+  {
+    highlight: {
+      color: 'purple',
+      fillMode: 'light',
+    },
+    dates: new Date(year, month, 13),
+  },
+  {
+    highlight: {
+      color: 'purple',
+      fillMode: 'outline',
+    },
+    dates: new Date(year, month, 14),
+  },
+]);
+      }
     };
-    </script>
+    </script> -->

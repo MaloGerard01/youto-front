@@ -5,6 +5,6 @@ export default defineNuxtConfig({
       '@nuxtjs/tailwindcss',
       '@pinia/nuxt',
       'nuxt-swiper',
-      '@samk-dev/nuxt-vcalendar'
+      '@samk-dev/nuxt-vcalendar',
   ],
 })

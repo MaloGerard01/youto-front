@@ -11,7 +11,10 @@
                 </div>
 
                 <div class="mx-10">
-                  <progress-bar/>
+                  <div class="w-full flex justify-center my-10">
+                    <progress-bar/>
+                  </div>
+                  
                     <!-- <div class="flex justify-stretch ">
                         <div class="rounded-full bg-vertPale h-12 w-12 flex align-center">
                             <img src="~/assets/check.svg" class="h-8 m-auto" />

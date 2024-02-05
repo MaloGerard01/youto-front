@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="mx-10">
-                  <div class="w-full flex justify-center my-10">
+                  <div class="w-full flex justify-center mt-10 mb-32">
                     <progress-bar/>
                   </div>
                   
@@ -37,7 +37,7 @@
                         </div>  
                     </div> -->
                     <div class="grid grid-cols-3 grid-rows-2 gap-3 w-full my-8">
-                      <div class="col-span-2 rounded-lg border-2 border-vertPale">
+                      <div class="col-span-2 rounded-lg border-2 border-vertPale h-5/6">
                         <h2 class="w-full text-center font-bold text-md my-4">To do list</h2>
 
                         <div class="flex flex-col gap-2 px-8 my-8">
@@ -89,7 +89,7 @@
                         </div>
 
                       </div>
-                      <div class="col-start-3 rounded-lg border-2 border-melonOrange">
+                      <div class="col-start-3 rounded-lg border-2 border-melonOrange h-5/6">
                         <h2 class="w-full text-center font-bold text-md my-4">Rappels</h2>
 
                         <div class="flex flex-col gap-4 px-8 my-8">

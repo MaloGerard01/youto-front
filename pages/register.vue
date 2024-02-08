@@ -31,7 +31,7 @@
           <div class="flex justify-between w-full">
             <input
           v-model="user.name"
-          type="email"
+          type="text"
           class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
           placeholder="Prénom"
           name="uname"
@@ -39,7 +39,7 @@
       />
       <input
           v-model="user.surname"
-          type="password"
+          type="text"
           class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
           placeholder="Nom"
           name="psw"

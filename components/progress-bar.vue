@@ -12,7 +12,7 @@
 
         <img src="~/assets/check.svg" class="h-full p-2 m-auto" :class="{ 'hidden': index > currentStep }" />
         <img src="~/assets/circle.svg" class="h-full p-2 m-auto" :class="{ 'hidden': index <= currentStep }" />
-        <div class="text-center  mt-2">
+        <div class="text-center  mt-2" v-if="step.emoji && step.emojiText">
             <p class="text-2xl">{{ step.emoji }}</p>
             <p class="font-bold text-sm absolute w-36 -left-12 mt-2">{{ step.emojiText }}</p>
         </div>
@@ -52,7 +52,7 @@
                 emoji:'📦',
                 emojiText:"Bon aménagement !"
             }],
-        currentStep: 1,
+        currentStep: 2,
       };
     },
   };

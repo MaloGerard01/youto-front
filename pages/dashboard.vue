@@ -14,28 +14,7 @@
                   <div class="w-full flex justify-center mt-10 mb-32">
                     <progress-bar/>
                   </div>
-                  
-                    <!-- <div class="flex justify-stretch ">
-                        <div class="rounded-full bg-vertPale h-12 w-12 flex align-center">
-                            <img src="~/assets/check.svg" class="h-8 m-auto" />
-                        </div>
-                        <div class="w-1/6 h-8 rounded-lg bg-vertPale my-auto"></div>  
-                        <div class="rounded-full bg-vertPale h-12 w-12 flex align-center">
-                            <img src="~/assets/check.svg" class="h-8 m-auto" />
-                        </div>  
-                        <div class="rounded-full bg-lightGray h-12 w-12 flex align-center">
-                            <div class="h-8 w-8 m-auto  rounded-full bg-white flex align-center">
-                              <div class="h-6 w-6 m-auto  rounded-full bg-lightGray">
-                              </div>
-                            </div>
-                        </div>  
-                        <div class="rounded-full bg-lightGray h-12 w-12 flex align-center">
-                            <div class="h-8 w-8 m-auto  rounded-full bg-white flex align-center">
-                              <div class="h-6 w-6 m-auto  rounded-full bg-lightGray">
-                              </div>
-                            </div>
-                        </div>  
-                    </div> -->
+        
                     <div class="grid grid-cols-3 grid-rows-2 gap-3 w-full my-8">
                       <div class="col-span-2 rounded-lg border-2 border-vertPale h-5/6">
                         <h2 class="w-full text-center font-bold text-md my-4">To do list</h2>
@@ -136,7 +115,17 @@
                       <div class="row-start-2 rounded-lg border-2 border-vertPale">
                         <h2 class="w-full text-center font-bold text-md my-4">Mon calendrier personnalisé</h2>
                         <div class="w-full mt-8">
-                          <VCalendar v-model="date" :attributes="attributes" expanded />
+                          <VCalendar v-model="date" :attributes="attributes" expanded transparent borderless />
+                          <div class="flex flex-col gap-3 mx-8"> 
+                            <div class="flex flex-row gap-2">
+                              <div class="rounded-full bg-melonOrange p-3"></div>
+                              <p>Date du jour</p>
+                            </div>
+                            <div class="flex flex-row gap-2">
+                              <div class="rounded-full bg-vertPale p-3"></div>
+                              <p>Prochain événement important</p>
+                            </div>
+                          </div>
                         </div>
                         
                       </div>
@@ -178,9 +167,9 @@
 
                             <div class="flex justify-between w-full">
                               <p class="w-1/3 text-center">Après-midi</p>
-                              <div class="flex gap-3 grow px-4">
-                                <p class="bg-vertPale px-4 py-1 w-full text-center rounded-2xl text-white text-md">Lun. 04</p>
-                                <p class="bg-vertPale px-4 py-1 w-full text-center rounded-2xl text-white text-md">Lun. 04</p>
+                              <div class="flex gap-3 grow px-3">
+                                <p class="bg-vertPale py-1 w-full text-center rounded-2xl text-white text-md">Lun. 04</p>
+                                <p class="bg-vertPale py-1 w-full text-center rounded-2xl text-white text-md">Lun. 04</p>
 
                               </div>
                             </div>

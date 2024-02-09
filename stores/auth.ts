@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia';
+import { SHA256 } from 'crypto-js';
+
 
 interface UserPayloadInterface {
     username: string;
@@ -14,12 +16,15 @@ export const useAuthStore = defineStore('auth', {
     actions: {
         async authenticateUser({ username, password }: UserPayloadInterface) {
             // useFetch from nuxt 3
-            const { data, pending }: any = await useFetch('https://dummyjson.com/auth/login', {
+
+            const hashedPassword = SHA256(password).toString();
+
+            const { data, pending }: any = await useFetch('http://localhost:3032/login', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: {
                     username,
-                    password,
+                    password: hashedPassword,
                 },
             });
             this.loading = pending;

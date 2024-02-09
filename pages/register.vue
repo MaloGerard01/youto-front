@@ -30,7 +30,7 @@
           </p>
           <div class="flex justify-between w-full">
             <input
-          v-model="user.name"
+          v-model="user.first_name"
           type="text"
           class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
           placeholder="Prénom"
@@ -38,7 +38,7 @@
           required
       />
       <input
-          v-model="user.surname"
+          v-model="user.last_name"
           type="text"
           class="border-2 border-gray-200 rounded-2xl py-3 pl-3"
           placeholder="Nom"
@@ -192,8 +192,8 @@ export default {
     return {
       currentStep: 0,
       user: {
-        name: '',
-        surname: '',
+        first_name: '',
+        last_name: '',
         dob: '',
         mob: '',
         yob: '',
@@ -244,6 +244,22 @@ export default {
         this.noMatchRegex = false
       }
       return false
+    },
+    setupUser() {
+
+      // Convertir les chaînes en nombres entiers
+const day = parseInt(this.user.dob, 10);
+const month = parseInt(this.user.mob, 10);
+const year = parseInt(this.user.yob, 10);
+
+// Créer une date en utilisant les valeurs converties
+const date = new Date(year, month, day);
+
+      let modifiedUser = {
+        email: this.user.email,
+        first_name: this.user.first_name,
+        last_name: this.user.last_name,
+      }
     },
     async submitForm() {
       if(this.passwordCheck()) {

@@ -9,6 +9,7 @@ interface UserPayloadInterface {
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({
+        error: false,
         authenticated: false,
         loading: false,
         userInfo: null,
@@ -18,18 +19,31 @@ export const useAuthStore = defineStore('auth', {
             // useFetch from nuxt 3
 
             const hashedPassword = SHA256(password).toString();
+            
+            console.log({
+                username,
+                password: hashedPassword,
+            })
 
-            const { data, pending }: any = await useFetch('http://localhost:3032/login', {
+            const { data, pending, error }: any = await useFetch('http://localhost:3032/login', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
-                body: {
-                    username,
+                body: JSON.stringify({
+                    email: username,
                     password: hashedPassword,
-                },
+                }),
             });
+
             this.loading = pending;
 
-            if (data.value) {
+            if(error.value.statusCode == 401)
+            {
+                console.log("error " + error.value.statusCode)
+                this.error = true
+            }
+
+            if (data.value && error.value.statusCode !== 401) {
+                this.error = false
                 console.log(data.value)
                 this.userInfo = data.value;
                 const token = useCookie('token'); // useCookie new hook in nuxt 3

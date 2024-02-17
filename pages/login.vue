@@ -24,6 +24,10 @@
           name="psw"
           required
       />
+      <p v-if="error" class="text-xs text-red-500">
+        L'adresse mail ou le mot de passe sont incorrects
+      </p>
+
           <button @click.prevent="login"
             class="text-center uppercase shadow-lg cursor-pointer font-bold  block px-4 py-3 bg-vertPale text-white rounded-2xl hover:bg-white hover:text-vertPale">
             Se connecter
@@ -57,22 +61,18 @@ import { useAuthStore } from '~/stores/auth'; // import the auth store we just c
 
 const { authenticateUser } = useAuthStore(); // use authenticateUser action from  auth store
 
-const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+const { authenticated, error } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const user = ref({
-  username: 'kminchelle',
-  password: '0lelplR',
+  username: '',
+  password: '',
 });
-
-// const user = ref({
-//   username: '',
-//   password: '',
-// });
 const router = useRouter();
 
 const login = async () => {
   await authenticateUser(user.value); // call authenticateUser and pass the user object
   // redirect to homepage if user is authenticated
+ 
   if (authenticated) {
     router.push('/dashboard');
   }

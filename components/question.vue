@@ -1,7 +1,7 @@
 <template>
     <div class="py-6">
       <!-- En-tête avec la phrase et l'icône -->
-      <div @click="toggleContent" class="flex items-center cursor-pointer ">
+      <div @click="toggleContent" class="flex items-center justify-between cursor-pointer ">
         <p class="mr-2 text-xl font-bold">{{ question }}</p>
         <svg
           v-if="!showContent"
@@ -9,7 +9,7 @@
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          class="h-4 w-4"
+          class="h-8 w-8"
         >
           <path
             stroke-linecap="round"
@@ -24,7 +24,7 @@
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          class="h-4 w-4"
+          class="h-8 w-8"
         >
           <path
             stroke-linecap="round"

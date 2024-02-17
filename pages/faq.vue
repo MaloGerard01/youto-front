@@ -21,6 +21,20 @@ Vous trouverez forcément votre bonheur !</p>
             <question question="Qui sont les conseillers qui nous répondent ? " reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
             <question question="Est-ce que les conseillers sont disponibles 7j/7j ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
         </div>
+
+        <div class="divide-y-2">
+            <h2 class="text-vertPale font-bold text-4xl mb-8">Paiement</h2>
+            <question question="Les paiements sont-ils sécurisés ?" reponse="Vos informations bancaires ne sont utilisées que dans le cadre de votre achat sur www.youto.fr. Aucune information bancaire vous concernant ne sera conservée. De plus, notre site internet est 100% sécurisé (HTTPS) et est hébergé chez OVH, notre fournisseur Français ."/>
+            <question question="Quels sont les modes de paiement acceptés ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
+            <question question="Vais-je recevoir un mail de confirmation après le paiement ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
+        </div>
+
+        <div class="divide-y-2">
+            <h2 class="text-vertPale font-bold text-4xl mb-8">Information</h2>
+            <question question="Est-ce que l’information est sure ?" reponse="Nos conseillers travail dure afin de dénicher les informations les plus récentes et les plus sures afin que vous ne vous trompiez pas. Lorsque nous vous indiquons une information, vous pouvez nous faire confiance, ce sera la bonne."/>
+            <question question="Je ne trouves pas l’information que je cherches, comment faire ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
+            <question question="Qui nous donne l’information ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
+        </div>
       </div>
 
     </div>

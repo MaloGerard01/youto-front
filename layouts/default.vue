@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-b from-vertClair">
+  <div>
     <header-component/>
   <slot />
   </div>

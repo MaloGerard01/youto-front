@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Groupe_1279" data-name="Groupe 1279" transform="translate(-332 -653)" opacity="0.4">
+    <circle id="Ellipse_36" data-name="Ellipse 36" cx="16" cy="16" r="16" transform="translate(332 653)" fill="#8a8b8b"/>
+    <path id="xmark-solid" d="M44.7,98.173a1.317,1.317,0,0,0-1.863-1.863l-4.33,4.334-4.334-4.33a1.317,1.317,0,0,0-1.863,1.863l4.334,4.33-4.33,4.334a1.317,1.317,0,0,0,1.863,1.863l4.33-4.334,4.334,4.33a1.317,1.317,0,0,0,1.863-1.863l-4.334-4.33Z" transform="translate(309.305 566.493)" fill="#fdfdfd"/>
+  </g>
+</svg>

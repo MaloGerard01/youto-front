@@ -21,11 +21,25 @@
       </div>
     </div>
 
-    <div class="h-full flex half-bg z-10 mb-4">
-      <div class="swiper-container mx-60 overflow-x-scroll">
-        <div class="swiper-wrapper flex justify-center">
-          <div class="swiper-slide" v-for="(card, index) in cards" :key="index">
-            <div class="bg-white px-8 py-4 shadow-md rounded-lg  flex flex-col gap-3">
+    <div class="px-[11rem] my-12 half-bg">
+      <Swiper
+      :height="800"
+      :modules="[SwiperAutoplay]"
+      :slides-per-view="3"
+      :space-between="40"
+      :loop="false"
+      :autoplay="{
+        delay: 8000,
+        disableOnInteraction: true
+      }"
+    >
+      <SwiperSlide
+      class="py-8"
+        v-for="(card, idx) in cards"
+        :key="idx"
+      >
+      <div class="bg-white px-8 py-4 shadow-md rounded-lg  flex flex-col gap-3">
+              <img class="mx-auto w-12" :src="`_nuxt/assets/` + card.icon">
               <h3 class="text-melonOrange font-bold text-center">{{ card.title }}</h3>
               <p class="text-sm">{{ card.description }}</p>
               <div class="flex justify-center">
@@ -33,14 +47,13 @@
                   Voir plus
                 </NuxtLink>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
-      </div>
-    </div>
+       </div>
+      </SwiperSlide>
+
+      <!-- useSwiper() within a swiper instance -->
+      <SwiperControls />
+    </Swiper>
+  </div>
 
 
     <div class="h-screen  flex bg-white">
@@ -165,33 +178,17 @@
 </template>
 
 <script setup>
-import Swiper from 'swiper';
 import { useAuthStore } from '~/stores/auth'; // import the auth store we just created
 const { userInfo } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 import { onMounted } from 'vue';
 
 var cards = [
-  { title: 'Mon logement', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
-  { title: 'Ma voiture', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
-  { title: 'Mon travail', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
+  { icon: 'home.svg', title: 'Mon logement', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
+  { icon: 'car.svg', title: 'Ma voiture', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
+  { icon: 'case.svg', title: 'Mon travail', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum' },
   // Ajoutez d'autres cartes au besoin
 ];
-var swiper = null;
 
-onMounted(() => {
-  swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-});
 // beforeDestroy() {
 //     if (this.swiper) {
 //       this.swiper.destroy();
@@ -201,17 +198,30 @@ onMounted(() => {
 </script>
 
 
+  
 <style>
 /* Styles spécifiques au carousel */
-.swiper-container {
-  width: 100%;
-  padding-top: 20px;
-}
-
 .swiper-slide {
-  border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.swiper-wrapper {
+min-width: 100vh;
+width: 100vh;
+}
+.swiper-cards {
+width: 240px;
+height: 240px;
+}
+.swiper-cards .swiper-slide {
+border-radius: 6px;
+border: 1px solid black;
 }
 
 .half-bg {
-  background: linear-gradient(to bottom, #f39454 50%, white 0%);
-}</style>
+  background: linear-gradient(to bottom, #fce4d4 50%, white 0%);
+}
+
+
+</style>

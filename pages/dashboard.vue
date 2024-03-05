@@ -199,12 +199,12 @@
         
     export default {
       setup() {
-        const { userInfo } = storeToRefs(useAuthStore()); // make authenticated state reactive with
+        // const { userInfo } = storeToRefs(useAuthStore()); // make authenticated state reactive with
 
-        console.log(userInfo)
-        definePageMeta({
-  middleware: ["auth"]
-})
+        // console.log(userInfo)
+//         definePageMeta({
+//   middleware: ["auth"]
+// })
       },
     
       data() {

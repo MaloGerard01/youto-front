@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia';
 import { SHA256 } from 'crypto-js';
 
-
 interface UserPayloadInterface {
     username: string;
     password: string;
@@ -36,19 +35,20 @@ export const useAuthStore = defineStore('auth', {
 
             this.loading = pending;
 
-            if(error.value.statusCode == 401)
-            {
-                console.log("error " + error.value.statusCode)
-                this.error = true
-            }
-
-            if (data.value && error.value.statusCode !== 401) {
+            // Vérifier si une erreur existe et si le statut n'est pas 401
+            if (data.value) {
                 this.error = false
-                console.log(data.value)
-                this.userInfo = data.value;
+                // console.log(data.value)
+                // this.userInfo = data.value;
                 const token = useCookie('token'); // useCookie new hook in nuxt 3
                 token.value = data?.value?.token; // set token to cookie
                 this.authenticated = true; // set authenticated  state value to true
+            }
+
+            // Vérifier si une erreur existe et si le statut est 401
+            if (error.value && error.value.statusCode === 401) {
+                console.log("error " + error.value.statusCode)
+                this.error = true
             }
         },
         logUserOut() {

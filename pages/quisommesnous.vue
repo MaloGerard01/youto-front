@@ -16,7 +16,9 @@
 
   
   
-      <div class="h-screen px-[11rem]  flex bg-lightOrange">
+      <div class="relative overflow-hidden">
+        <img class="absolute bottom-0 -right-[18rem] p-2 w-1/2 -mr-8 -mb-8 -z-10" src="~/assets/bobrouge.png"/>
+      <div class="h-1/2 px-[11rem]  flex">
         <div class="flex flex-row justify-start gap-6 items-center w-screen w-1/2">
           <div class="flex flex-col w-full mb-20">
             <titlegroup title="En savoir plus" subtitle="Quelques chiffres pour parler de Youto" orange/>
@@ -56,34 +58,10 @@
           </div>
         </div>
       </div>
-  
-      <div class="px-[11rem] my-12">
-        <titlegroup title="Partenaires" subtitle="Ils nous font confiance" />
-      <Swiper
-      :height="800"
-      :modules="[SwiperAutoplay]"
-      :slides-per-view="6"
-      :space-between="40"
-      :loop="true"
-      :autoplay="{
-        delay: 8000,
-        disableOnInteraction: true
-      }"
-    >
-      <SwiperSlide
-        v-for="(partner, idx) in partners"
-        :key="idx"
-      >
-      <img class="" :src="`_nuxt/assets/` + partner.url">
-    </SwiperSlide>
+      </div>
 
-      <!-- useSwiper() within a swiper instance -->
-      <SwiperControls />
-    </Swiper>
-</div>
-
-      <div class="px-[11rem] my-12">
-        <titlegroup title="Articles de blog" subtitle="Ils parlent de nous" />
+      <div class="px-[11rem] py-2 my-12">
+        <titlegroup title="Articles de blog" subtitle="Ils parlent de nous" orange/>
       <Swiper
       :height="800"
       :modules="[SwiperAutoplay]"
@@ -99,13 +77,13 @@
         v-for="(card, idx) in cards"
         :key="idx"
       >
-      <div class="bg-vertPale  shadow-md rounded-2xl  ">
+      <div class="bg-white  shadow-lg rounded-2xl  ">
                 <img class=" rounded-t-2xl" src="~/assets/cardtest2.webp">
                 <div class="px-8 py-4 flex flex-col gap-3"> 
-                  <h3 class="text-white font-bold text-left">{{ card.title }}</h3>
-                <p class="text-sm text-white my-6">{{ card.description }}</p>
+                  <h3 class="text-vertPale font-bold text-left">{{ card.title }}</h3>
+                <p class="text-sm text-vertPale my-6">{{ card.description }}</p>
                 <div class="flex justify-end">
-                  <NuxtLink class="text-white mt-1 w-1/3 text-sm text-center cursor-pointer block py-2 font-bold">
+                  <NuxtLink class="text-vertPale mt-1 w-1/3 text-sm text-center cursor-pointer block py-2 font-bold">
                     Voir plus >
                   </NuxtLink>
                 </div>

@@ -1,6 +1,9 @@
 <template>
 
 <body>
+  <div class="relative overflow-hidden">
+        <img class="absolute bottom-0 -right-[18rem] p-2 w-1/2 -mr-8 -mb-8 -z-10" src="~/assets/bob.png"/>
+
     <div class="h-screen flex mx-[11rem] mb-16">
       <div class=" w-full mt-16 ">
         <div class="flex flex-col w-3/5 gap-4" v-if="currentStep === 0">
@@ -171,6 +174,7 @@
       <div class=" w-1/2 mt-16 ">
 
       </div>
+    </div>
     </div>
 </body>
 </template>

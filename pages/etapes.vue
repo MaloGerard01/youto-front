@@ -1,5 +1,8 @@
 <template>
-    <div class="h-screen mt-12 mx-32">
+    <div class="relative overflow-hidden">
+        <img class="absolute bottom-0 -right-[18rem] p-2 w-1/2 -mr-8 -mb-8 -z-10" src="~/assets/bobtrans.png"/>
+
+    <div class="   h-screen mt-12 mx-32">
         <div class=""> 
         <div>
             <h1 class="font-bold text-3xl">Facilitez votre déménagement</h1>
@@ -45,6 +48,7 @@
         </div>
 
     </div>
+</div>
 </template>
 
 <script>

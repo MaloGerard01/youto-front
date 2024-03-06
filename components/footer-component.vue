@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full h-80 bg-vertClair">
+    <div class="w-full h-80 bg-vertPale">
          <div class="flex flex-row justify-around pt-16"> 
             <div> 
-                <span class="uppercase font-bold text-xl">Coordonnées</span>
-                <ul class="mt-6">
+                <span class="uppercase font-bold text-xl text-white">Coordonnées</span>
+                <ul class="mt-6 text-white font-light	">
                     <li>
                         Campus de Ker Lann
                     </li>
@@ -22,8 +22,8 @@
                 </ul>
             </div>
             <div> 
-                <span class="uppercase font-bold text-xl">Navigation</span> 
-                <ul class="mt-6">
+                <span class="uppercase font-bold text-xl text-white">Navigation</span> 
+                <ul class="mt-6 text-white font-light	">
                     <li>
                         Qui sommes-nous ?
                     </li>
@@ -39,16 +39,16 @@
                 </ul>
             </div>
             <div> 
-                <span class="uppercase font-bold text-xl">FAQ</span>
+                <span class="uppercase font-bold text-xl text-white">FAQ</span>
             </div>
             <div> 
                 <NuxtLink to="/" class="">
-                    <img src="~/assets/youtovtf.png" class="h-14 mr-3" />
+                    <img src="~/assets/logo.png" class="h-14 mr-3" />
                 </NuxtLink>
                 <div class=" mt-6 flex flex-row gap-6 justify-center"> 
-                    <img src="~/assets/facebook.svg" class="h-6 mr-3" />
-                    <img src="~/assets/Instagram.svg" class="h-6 mr-3" />
-                    <img src="~/assets/TikTok.svg" class="h-6 mr-3" />
+                    <img src="~/assets/facebook.png" class="h-6 mr-3" />
+                    <img src="~/assets/insta.png" class="h-6 mr-3" />
+                    <img src="~/assets/tiktok.png" class="h-6 mr-3" />
                 </div>
 
 

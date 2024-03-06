@@ -7,14 +7,14 @@
     <div class="h-screen flex">
       <div class="flex flex-row justify-center items-center ">
         <div class="flex flex-col gap-6 w-[60%]">
-          <h1 class="text-melonOrange font-bold text-4xl">Pour toi aussi l'administratif c'est prise de tête ?</h1>
+          <h1 class="text-vertPale font-bold text-4xl">Pour toi aussi <span class="text-melonOrange">l'administratif</span> c'est prise de tête ?</h1>
           <p class="text-sm w-[65%] ">
-            <strong>Youto</strong>,c'est bien qu'une simple plateforme, <strong>c'est un allié</strong> pour rendre
-            les démarches administratives plus simples, amusantes et <strong>moins stressantes !</strong>
+            Youto,c'est bien qu'une simple plateforme, c'est un allié pour rendre
+            les démarches administratives plus simples, amusantes et moins stressantes !
           </p>
           <NuxtLink
             class="w-[40%] text-center shadow-md cursor-pointer font-bold  block px-4 py-3 bg-melonOrange border-2 border-melonOrange text-white rounded-2xl hover:bg-white hover:text-melonOrange">
-            Je découvre les offres
+            J'ai besoin d'aide
           </NuxtLink>
         </div>
           <img class="absolute right-24 w-1/2 z-1" src="~/assets/perso.png"/>
@@ -163,15 +163,7 @@
       </div>
     </div>
 
-    <div class="h-60  flex bg-vertPale">
-        <div class="flex flex-col justify-center items-center w-screen gap-6">
-          <h2 class="text-white font-bold text-3xl">Contacte-nous sans ne plus attendre</h2>
-          <NuxtLink
-            class="w-[15%] text-center shadow-md cursor-pointer font-bold  block px-4 py-3 bg-white border-2 border-vertPale text-vertPale rounded-2xl hover:bg-vertPale hover:text-white">
-            Je prends contact
-          </NuxtLink>
-        </div>
-    </div>
+    <pre-footer/>
 
 
   </body>

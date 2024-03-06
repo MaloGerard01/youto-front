@@ -4,8 +4,9 @@
       <div class="h-full flex w-screen bg-white">
           <dashboardMenu/>
           <div class="mx-20 grow pb-16">
-          <div class="mt-16 flex flex-col gap-4 justify-center">
+          <div class="mt-16 flex flex-col w-1/3 gap-4 justify-center">
                   <p class="font-bold text-3xl">Rappels</p>
+                  <button class="w-1/2 shadow-md cursor-pointer font-bold  block py-3 bg-melonOrange text-white rounded-2xl hover:bg-white hover:text-melonOrange">+ Nouvelle tâche</button>
           </div>
 
           <div class="flex flex-col gap-4 my-8">

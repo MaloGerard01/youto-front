@@ -4,9 +4,9 @@
         <div class="h-full flex w-screen bg-white">
             <dashboardMenu/>
             <div class="mx-20 grow pb-16">
-            <div class="mt-16 flex flex-col gap-4 justify-left">
+            <div class="mt-16 flex flex-col w-1/3 gap-4 justify-left">
                     <p class="font-bold text-3xl">To do list</p>
-                    <button>Nouvelle tâche</button>
+                    <button class="w-1/2 shadow-md cursor-pointer font-bold  block py-3 bg-vertPale border-2 border-white text-white rounded-2xl hover:bg-white hover:text-vertPale">+ Nouvelle tâche</button>
             </div>
 
             <div class="flex flex-col gap-4 my-8">

@@ -22,6 +22,8 @@
             <question question="Y a-t-il des frais à payer pour mettre à jour mon adresse ?" reponse="Pour créer votre compte, il vous suffit de cliquer ici. Sinon, vous pouvez aussi créer votre compte lors de votre achat."/>
 
     </div>
+
+    <pre-footer/>
 </template>
 
 <script>

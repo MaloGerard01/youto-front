@@ -4,14 +4,34 @@
     </title>
   
     <body>
-      <div class="h-screen flex">
+      <!-- <div class="h-screen flex">
         <div class="flex flex-row justify-end items-center ">
           <div class="flex flex-col gap-6 w-[60%]">
             <h1 class="text-vertPale font-bold text-4xl">Un conseiller à ton écoute !</h1>
           </div>
             <img class="absolute right-24 w-1/2 z-1" src="~/assets/groupe.png"/>
         </div>
+      </div> -->
+
+      <div class="relative overflow-hidden"> 
+          <img class="absolute -right-24 w-1/2" src="~/assets/qsn.png"/>
+
+      <div class="h-screen flex">
+      <div class=" m-auto ml-40 items-center ">
+        <div class="flex flex-col gap-6 w-1/2">
+          <h1 class="text-vertPale font-bold text-4xl">YOUTO : ton partenaire incontournable pour des démarches administratives <span class="text-melonOrange">faciles</span>, <span class="text-melonOrange">rapides</span> et <span class="text-melonOrange">sans stress</span>.</h1>
+          <p class="text-sm w-[65%] ">
+            Fini les recherches interminables sur Internet et les informations contradictoires ! 
+Avec Youto, tu as accès à des informations fiables et vérifiées en quelques clics.
+          </p>
+          <NuxtLink
+            class="w-[40%] text-center shadow-md cursor-pointer font-bold  block px-4 py-3 bg-melonOrange border-2 border-melonOrange text-white rounded-2xl hover:bg-white hover:text-melonOrange">
+            Je souhaite voir les offres
+          </NuxtLink>
+        </div>
       </div>
+    </div>
+  </div>
   
 
   
@@ -95,6 +115,7 @@
       <SwiperControls />
     </Swiper>
 </div>
+<pre-footer/>
     </body>
   </template>
   

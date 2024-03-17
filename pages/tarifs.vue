@@ -14,7 +14,14 @@
 
 
 
-    <div class="flex flex-row justify-center items-center mx-24 ">
+    <div class="relative"> 
+          <div class="absolute -right-24 w-1/2 h-full my-auto ">
+        <img :class="{ 'hidden': step != 0}" src="~/assets/tarif1.png"/>
+        <img :class="{ 'hidden': step != 1}" src="~/assets/tarif2.png"/>
+        <img :class="{ 'hidden': step != 2}" src="~/assets/tarif3.png"/>
+      </div>
+
+    <div class="flex flex-row items-center mx-24 ">
       <div class="flex flex-col gap-6 w-1/2">
         <div> 
           <ul class="flex flex-col gap-12"> 
@@ -59,15 +66,13 @@
           </ul>
         </div>
       </div>
-      <div class="flex items-center w-1/2 z-1">
-        <img :class="{ 'hidden': step != 0}" src="~/assets/tarif1.png"/>
-        <img :class="{ 'hidden': step != 1}" src="~/assets/tarif2.png"/>
-        <img :class="{ 'hidden': step != 2}" src="~/assets/tarif3.png"/>
-      </div>
+
+    </div>
 
     </div>
 
   </div>
+  <pre-footer/>
 </template>
 
   <script>

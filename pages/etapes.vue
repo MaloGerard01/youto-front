@@ -49,6 +49,7 @@
 
     </div>
 </div>
+<pre-footer/>
 </template>
 
 <script>

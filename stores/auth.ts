@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia';
-import { SHA256 } from 'crypto-js';
+import pkg from 'crypto-js'; 
+
+const { SHA256 } = pkg;
 
 interface UserPayloadInterface {
     username: string;

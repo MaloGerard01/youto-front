@@ -73,10 +73,10 @@
 
                         <div class="flex flex-col gap-4 px-8 my-8">
                           <div class="flex gap-2 rounded-3xl bg-lightOrange">
-                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
-                              <p class="text-2xl">14</p>
+                            <div class="text-center rounded-2xl bg-melonOrange text-white w-16 py-3 px-1 font-bold">
+                              <img src="~/assets/bell.svg" class="h-full m-auto"/>
                             </div>
-                            <div class="my-auto flex justify-between grow text-xs">
+                            <div class="my-auto mr-6 flex justify-between grow text-xs">
                               <div> 
                                 <p>Dans 2 jours n'oublie pas ton rdv avec ton conseiller</p>
                               </div>
@@ -84,10 +84,10 @@
                           </div>
 
                           <div class="flex gap-2 rounded-3xl bg-lightOrange">
-                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
-                              <p class="text-2xl">7</p>
+                            <div class="text-center rounded-2xl bg-melonOrange text-white w-14 py-3 px-1 font-bold">
+                              <img src="~/assets/bell.svg" class="h-full m-auto"/>
                             </div>
-                            <div class="my-auto flex justify-between grow text-xs">
+                            <div class="my-auto mr-6 flex justify-between grow text-xs">
                               <div> 
                                 <p>Il te reste 2 documents à nous transmettre</p>
                               </div>
@@ -95,10 +95,10 @@
                           </div>
 
                           <div class="flex gap-2 rounded-3xl bg-lightOrange">
-                            <div class="text-center rounded-3xl bg-melonOrange text-white w-12 py-2 font-bold">
-                              <p class="text-2xl">20</p>
+                            <div class="text-center rounded-2xl bg-melonOrange text-white w-16 py-3 px-1 font-bold">
+                              <img src="~/assets/bell.svg" class="h-full m-auto"/>
                             </div>
-                            <div class="my-auto flex justify-between grow text-xs">
+                            <div class="my-auto mr-6 flex justify-between grow text-xs">
                               <div> 
                                 <p>Penses à prévoir ton changement de box internet</p>
                               </div>
@@ -209,25 +209,6 @@
     
       data() {
         return {
-            userName: '',
-          currentStep: 0,
-          user: {
-            name: '',
-            surname: '',
-            dob: '',
-            mob: '',
-            yob: '',
-            tel: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-            city: '',
-            cgu: false,
-            newsletter: false,
-          },
-          noMatchConfirm: false,
-          noMatchRegex: false,
-          errorMessage: '',
           date: new Date(),
           attributes: ref([]) as Ref<{ key: string; highlight: { color: string; fillMode: string; contentClass: string }; dates: Date }[]>,
         };

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="21" viewBox="0 0 18 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_768" data-name="Rectangle 768" width="18" height="21" transform="translate(1435 682)" fill="#fdfdfd" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_de_masques_26" data-name="Groupe de masques 26" transform="translate(-1435 -682)" clip-path="url(#clip-path)">
+    <path id="bell-regular" d="M9,0A1.284,1.284,0,0,0,7.715,1.286v.772a6.432,6.432,0,0,0-5.143,6.3V9.379A8.044,8.044,0,0,1,.812,14.4l-.6.751a.964.964,0,0,0,.751,1.567H17.037a.964.964,0,0,0,.751-1.567l-.6-.747a8.063,8.063,0,0,1-1.76-5.023V8.358a6.432,6.432,0,0,0-5.143-6.3V1.286A1.284,1.284,0,0,0,9,0ZM9,3.858a4.5,4.5,0,0,1,4.5,4.5V9.379a9.98,9.98,0,0,0,1.6,5.409H2.905A9.98,9.98,0,0,0,4.5,9.379V8.358A4.5,4.5,0,0,1,9,3.858ZM11.573,18H6.429a2.572,2.572,0,1,0,5.143,0Z" transform="translate(1435 682.213)" fill="#fdfdfd"/>
+  </g>
+</svg>
